@@ -1,0 +1,164 @@
+# Include your customized HAL commands here
+# This file will not be overwritten when you run stepconf again
+loadusr -W hidcomp -ini bernardo.ini pendant.hid 
+
+# Turn on back-light
+#setp hidcomp.0.LCD-backlight-led.out TRUE
+net machine-is-on halui.machine.is-on => hidcomp.0.internal-led.out
+
+loadrt or2 count=3
+addf or2.0 servo-thread
+addf or2.1 servo-thread
+addf or2.2 servo-thread
+
+loadrt select8 count=2
+addf select8.0 servo-thread
+addf select8.1 servo-thread
+
+loadrt mux4 count=1
+addf mux4.0 servo-thread
+
+loadrt and2 count=9
+addf and2.0 servo-thread  # X axis
+addf and2.1 servo-thread  # Y axis
+addf and2.2 servo-thread  # Z axis
+addf and2.3 servo-thread  # A axis
+addf and2.4 servo-thread  # Feed over
+addf and2.5 servo-thread  # Spindle over
+addf and2.6 servo-thread  # Rapid over
+addf and2.7 servo-thread  # Run program
+addf and2.8 servo-thread  # pause program
+
+loadrt toggle2nist
+addf toggle2nist.0 servo-thread
+
+loadrt toggle
+addf toggle.0 servo-thread
+
+#setup enable buttons for move or overrides 
+net enable-pos hidcomp.0.enable-left-button.in
+net enable-vel hidcomp.0.enable-right-button.in
+net enable-pos or2.2.in0
+net enable-vel or2.2.in1
+net enable-either or2.2.out
+
+#setup multiplier for axis move and show on LCD
+net select-multiplier hidcomp.0.multiplier.raw select8.0.sel
+net mult-out1  select8.0.out1 => or2.0.in0
+net mult-out2  select8.0.out2 => or2.1.in0
+net mult-out3  select8.0.out3 => or2.0.in1
+net mult-out3 or2.1.in1
+
+setp mux4.0.in0 0.01
+setp mux4.0.in1 0.1
+setp mux4.0.in2 1
+setp mux4.0.in3 10
+
+net muxsel0 or2.0.out mux4.0.sel0
+net muxsel1 or2.1.out mux4.0.sel1
+#net mult-value hidcomp.0.LCD.in-float-0 mux4.0.out
+net mult-value mux4.0.out
+
+
+
+#setup axis-selector and show on LCD
+
+#net select-axis hidcomp.0.selector.raw select8.1.sel hidcomp.0.LCD.in-s32-0
+net x-select select8.1.out0
+net y-select select8.1.out1
+net z-select select8.1.out2
+net a-select select8.1.out3
+net feed-over-select select8.1.out4
+net spindle-over-select select8.1.out5
+net rapid-over-select select8.1.out6
+
+#Jog X
+net jog-wheel-count hidcomp.0.jog-wheel.count
+net jog-wheel-count axis.0.jog-counts
+net enable-vel axis.0.jog-vel-mode
+net mult-value axis.0.jog-scale
+net enable-either and2.0.in0
+net x-select and2.0.in1
+net x-enabled and2.0.out axis.0.jog-enable
+
+#jog Y
+net jog-wheel-count axis.1.jog-counts
+net enable-vel axis.1.jog-vel-mode
+net mult-value axis.1.jog-scale
+net enable-either and2.1.in0
+net y-select and2.1.in1
+net y-enabled and2.1.out axis.1.jog-enable
+
+#Jog z
+net jog-wheel-count axis.2.jog-counts
+net enable-vel axis.2.jog-vel-mode
+net mult-value axis.2.jog-scale
+net enable-either and2.2.in0
+net z-select and2.2.in1
+net z-enabled and2.2.out axis.2.jog-enable
+
+# Jog A
+#hal and2.3 reservd for a axis
+
+#Feed override
+#net jog-wheel-count halui.feed-override.counts
+#setp halui.feed-override.scale 0.025 # fix scale, multiplier is not used
+#net feed-override hidcomp.0.feed-override.raw => halui.feed-override.counts
+#setp halui.feed-override.count-enable 1
+#net enable-either => and2.4.in0
+#net feed-over-select => and2.4.in1
+#net feed-over-enabled and2.4.out => halui.feed-override.count-enable
+
+#Spindle override
+net jog-wheel-count halui.spindle-override.counts
+setp halui.spindle-override.scale 0.025 # fix scale, multiplier is not used
+net enable-either => and2.5.in0
+net spindle-over-select => and2.5.in1
+net spindle-over-enabled and2.5.out => halui.spindle-override.count-enable
+
+#Rapid override
+net jog-wheel-count halui.max-velocity.counts
+setp halui.max-velocity.scale 0.025 # fix scale, multiplier is not used
+net enable-either => and2.6.in0
+net rapid-over-select => and2.6.in1
+net rapid-over-enabled and2.6.out => halui.max-velocity.count-enable
+
+# Buttons
+# Program run
+net run-button <= hidcomp.0.run-button.in
+net run-button => and2.7.in0
+net is-stopped <= halui.program.is-idle
+net is-stopped => and2.7.in1 
+net do-run and2.7.out => halui.program.run halui.mode.auto
+
+# Program run - step when paused
+net run-button => and2.8.in0
+net is-paused <= halui.program.is-paused
+net is-paused => and2.8.in1
+net do-step and2.8.out => halui.program.step
+
+#Program stop
+net stop-button   halui.program.stop  <= hidcomp.0.stop-button.in
+#net stop-button =>  halui.program.stop
+
+# Program pause
+net pause-button hidcomp.0.pause-button.in => toggle.0.in
+net toggled-pause toggle.0.out => toggle2nist.0.in
+net is-paused => toggle2nist.0.is-on
+net toggle-pause toggle2nist.0.on => halui.program.pause
+net toggle-resume toggle2nist.0.off => halui.program.resume
+
+# Stop run pause LEDs
+net is-running <= halui.program.is-running
+net is-running => hidcomp.0.run-led.out
+net is-paused => hidcomp.0.pause-led.out
+net is-stopped => hidcomp.0.stop-led.out
+
+#net select-axis => hidcomp.0.LCD.page-select
+#net relative-x halui.axis.0.pos-relative => hidcomp.0.LCD.in-float-1   # X Relative coordinate
+#net relative-y halui.axis.1.pos-relative => hidcomp.0.LCD.in-float-2   # Y
+#net relative-z halui.axis.2.pos-relative => hidcomp.0.LCD.in-float-3   # Z
+#net f-over halui.feed-override.value => hidcomp.0.LCD.in-float-4
+#net s-over halui.spindle-override.value => hidcomp.0.LCD.in-float-5
+#net r-over halui.max-velocity.value => hidcomp.0.LCD.in-float-6
+#net spindle-cmd => hidcomp.0.LCD.in-float-7

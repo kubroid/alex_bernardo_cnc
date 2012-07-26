@@ -1,0 +1,206 @@
+<!DOCTYPE GenericHID>
+<GenericHID>
+ <Shapes>
+  <Shape x="-155" y="-397" shapeId="Teensy++2.0" rotate="180" instanceId="1" mirror="false" >
+   <Property value="Alex mill pendant" name="Name" />
+   <Property value="1:8" name="Usage" />
+   <Property value="5" name="Voltage" />
+   <Property value="Bus-Powered" name="Power-Source" />
+   <Property value="50" name="Interval" />
+   <Property value="0" name="Serial-Debug" />
+   <Property value="20" name="Current" />
+   <Property value="None" name="Use Status LEDs" />
+   <Property value="1" name="SerialNo" />
+   <Property value="0,8,100" name="Timer1" />
+   <Property value="0,8,100" name="Timer2" />
+   <Property value="0,8,100" name="Timer3" />
+   <Property value="teensypp2.hex" name="Firmware" />
+   <Property value="HalfKay" name="ProgrammerType" />
+   <Property value="16000000" name="CPUClock" />
+  </Shape>
+  <Shape x="165.5539215686274" y="411.6666666666667" shapeId="digitalencoder" rotate="90" instanceId="4" mirror="false" >
+   <Property value="jog-wheel" name="Name" />
+   <Property value="1:55" name="Usage" />
+   <Property value="10" name="Bits" />
+   <Property value="0" name="Current" />
+  </Shape>
+  <Shape x="-158.7696078431372" y="-547.1421568627451" shapeId="lcd" rotate="360" instanceId="6" mirror="false" >
+   <Property value="LCD" name="Name" />
+   <Property value="20:1" name="Usage" />
+   <Property value="4" name="Rows" />
+   <Property value="16" name="Columns" />
+   <Property value="false" name="8 Bit" />
+   <Property value="0" name="Row1Address" />
+   <Property value="64" name="Row2Address" />
+   <Property value="16" name="Row3Address" />
+   <Property value="80" name="Row4Address" />
+   <Property value="300" name="Current" />
+  </Shape>
+  <Shape x="-582.200117370892" y="-98.28345070422533" shapeId="led" rotate="270" instanceId="10" mirror="false" >
+   <Property value="run-led" name="Name" />
+   <Property value="8:1000" name="Usage" />
+   <Property value="true" name="Source" />
+   <Property value="5" name="Current" />
+  </Shape>
+  <Shape x="-584.6361502347418" y="-40.25704225352111" shapeId="led" rotate="270" instanceId="11" mirror="false" >
+   <Property value="pause-led" name="Name" />
+   <Property value="8:1000" name="Usage" />
+   <Property value="true" name="Source" />
+   <Property value="5" name="Current" />
+  </Shape>
+  <Shape x="-584.8705673758866" y="15.74734042553195" shapeId="led" rotate="270" instanceId="12" mirror="false" >
+   <Property value="stop-led" name="Name" />
+   <Property value="8:1000" name="Usage" />
+   <Property value="true" name="Source" />
+   <Property value="5" name="Current" />
+  </Shape>
+  <Shape x="-584.426447574335" y="80.69464006259796" shapeId="led" rotate="270" instanceId="13" mirror="false" >
+   <Property value="enable-led" name="Name" />
+   <Property value="8:1000" name="Usage" />
+   <Property value="true" name="Source" />
+   <Property value="5" name="Current" />
+  </Shape>
+  <Shape x="187.75" y="-349.8333333333333" shapeId="rotaryswitch" rotate="90" instanceId="14" mirror="false" >
+   <Property value="selector" name="Name" />
+   <Property value="9:1" name="Usage" />
+   <Property value="7" name="Outputs" />
+   <Property value="true" name="Pullup" />
+   <Property value="true" name="Debounce" />
+   <Property value="0" name="Current" />
+  </Shape>
+  <Shape x="205.8333333333333" y="-221.1666666666666" shapeId="rotaryswitch" rotate="90" instanceId="15" mirror="false" >
+   <Property value="multiplier" name="Name" />
+   <Property value="9:1" name="Usage" />
+   <Property value="4" name="Outputs" />
+   <Property value="true" name="Pullup" />
+   <Property value="true" name="Debounce" />
+   <Property value="0" name="Current" />
+  </Shape>
+  <Shape x="107.3308823529412" y="-543.2328431372548" shapeId="led" rotate="360" instanceId="16" mirror="true" >
+   <Property value="LCD-backlight-led" name="Name" />
+   <Property value="8:1000" name="Usage" />
+   <Property value="true" name="Source" />
+   <Property value="5" name="Current" />
+  </Shape>
+  <Shape x="-611.5592723004695" y="-176.2300469483568" shapeId="pushbutton" rotate="270" instanceId="17" mirror="false" >
+   <Property value="enable-right-button" name="Name" />
+   <Property value="9:1" name="Usage" />
+   <Property value="true" name="Pullup" />
+   <Property value="true" name="Debounce" />
+   <Property value="0" name="Current" />
+  </Shape>
+  <Shape x="-34.16666666666669" y="389.4705882352941" shapeId="pushbutton" rotate="90" instanceId="18" mirror="false" >
+   <Property value="wheel-button" name="Name" />
+   <Property value="9:1" name="Usage" />
+   <Property value="true" name="Pullup" />
+   <Property value="true" name="Debounce" />
+   <Property value="0" name="Current" />
+  </Shape>
+  <Shape x="202.75" y="334.25" shapeId="pushbutton" rotate="90" instanceId="19" mirror="false" >
+   <Property value="stop-button" name="Name" />
+   <Property value="9:1" name="Usage" />
+   <Property value="true" name="Pullup" />
+   <Property value="true" name="Debounce" />
+   <Property value="0" name="Current" />
+  </Shape>
+  <Shape x="325.75" y="361.6666666666667" shapeId="pushbutton" rotate="90" instanceId="20" mirror="false" >
+   <Property value="pause-button" name="Name" />
+   <Property value="9:1" name="Usage" />
+   <Property value="true" name="Pullup" />
+   <Property value="true" name="Debounce" />
+   <Property value="0" name="Current" />
+  </Shape>
+  <Shape x="370.8872549019608" y="265.1666666666667" shapeId="pushbutton" rotate="90" instanceId="21" mirror="false" >
+   <Property value="run-button" name="Name" />
+   <Property value="9:1" name="Usage" />
+   <Property value="true" name="Pullup" />
+   <Property value="true" name="Debounce" />
+   <Property value="0" name="Current" />
+  </Shape>
+  <Shape x="-609.1338028169014" y="-263.5639671361503" shapeId="pushbutton" rotate="270" instanceId="22" mirror="false" >
+   <Property value="enable-left-button" name="Name" />
+   <Property value="9:1" name="Usage" />
+   <Property value="true" name="Pullup" />
+   <Property value="true" name="Debounce" />
+   <Property value="0" name="Current" />
+  </Shape>
+  <Shape x="280.5416666666666" y="-7.249999999999986" shapeId="led" rotate="90" instanceId="23" mirror="false" >
+   <Property value="internal-led" name="Name" />
+   <Property value="8:1000" name="Usage" />
+   <Property value="true" name="Source" />
+   <Property value="5" name="Current" />
+  </Shape>
+  <Shape x="414.0588235294118" y="170.3921568627451" shapeId="pushbutton" rotate="90" instanceId="24" mirror="false" >
+   <Property value="E-stop" name="Name" />
+   <Property value="9:1" name="Usage" />
+   <Property value="true" name="Pullup" />
+   <Property value="true" name="Debounce" />
+   <Property value="0" name="Current" />
+  </Shape>
+  <Shape x="-445.8333333333333" y="-360.4166666666667" shapeId="pot" rotate="360" instanceId="25" mirror="true" >
+   <Property value="spindle_override" name="Name" />
+   <Property value="1:56" name="Usage" />
+   <Property value="10" name="Bits" />
+   <Property value="0" name="Current" />
+  </Shape>
+  <Shape x="-473.9583333333333" y="-237.5000000000001" shapeId="pot" rotate="0" instanceId="26" mirror="true" >
+   <Property value="feed_override" name="Name" />
+   <Property value="1:56" name="Usage" />
+   <Property value="10" name="Bits" />
+   <Property value="0" name="Current" />
+  </Shape>
+  <Shape x="-250.6904170118754" y="217.2742336371168" shapeId="pwm" rotate="270" instanceId="27" mirror="false" >
+   <Property value="" name="Name" />
+   <Property value="62500:1" name="Usage" />
+   <Property value="10.0kHz" name="Frequency" />
+   <Property value="100" name="Resolution" />
+   <Property value="Timer1" name="Timer" />
+  </Shape>
+  <Shape x="-350.1518917426128" y="218.1441590720797" shapeId="pwm" rotate="270" instanceId="28" mirror="false" >
+   <Property value="" name="Name" />
+   <Property value="62500:1" name="Usage" />
+   <Property value="10.0kHz" name="Frequency" />
+   <Property value="100" name="Resolution" />
+   <Property value="Timer1" name="Timer" />
+  </Shape>
+ </Shapes>
+ <Wires>
+  <Wire startShapeId="4" startPinId="B" endShapeId="1" endPinId="PD0" />
+  <Wire startShapeId="4" startPinId="A" endShapeId="1" endPinId="PD1" />
+  <Wire startShapeId="14" startPinId="1" endShapeId="1" endPinId="PC7" />
+  <Wire startShapeId="14" startPinId="2" endShapeId="1" endPinId="PC6" />
+  <Wire startShapeId="14" startPinId="3" endShapeId="1" endPinId="PC5" />
+  <Wire startShapeId="14" startPinId="4" endShapeId="1" endPinId="PC4" />
+  <Wire startShapeId="14" startPinId="5" endShapeId="1" endPinId="PC2" />
+  <Wire startShapeId="14" startPinId="6" endShapeId="1" endPinId="PC3" />
+  <Wire startShapeId="14" startPinId="7" endShapeId="1" endPinId="PC1" />
+  <Wire startShapeId="1" startPinId="PB7" endShapeId="18" endPinId="In" />
+  <Wire startShapeId="1" startPinId="PD2" endShapeId="19" endPinId="In" />
+  <Wire startShapeId="1" startPinId="PD3" endShapeId="20" endPinId="In" />
+  <Wire startShapeId="1" startPinId="PD4" endShapeId="21" endPinId="In" />
+  <Wire startShapeId="1" startPinId="PC0" endShapeId="15" endPinId="1" />
+  <Wire startShapeId="1" startPinId="PE1" endShapeId="15" endPinId="2" />
+  <Wire startShapeId="1" startPinId="PE0" endShapeId="15" endPinId="3" />
+  <Wire startShapeId="1" startPinId="PD7" endShapeId="15" endPinId="4" />
+  <Wire startShapeId="1" startPinId="PD6" endShapeId="23" endPinId="In" />
+  <Wire startShapeId="1" startPinId="PD5" endShapeId="24" endPinId="In" />
+  <Wire startShapeId="6" startPinId="RS" endShapeId="1" endPinId="PA0" />
+  <Wire startShapeId="6" startPinId="R/W" endShapeId="1" endPinId="PA1" />
+  <Wire startShapeId="6" startPinId="E" endShapeId="1" endPinId="PA2" />
+  <Wire startShapeId="6" startPinId="D4" endShapeId="1" endPinId="PA3" />
+  <Wire startShapeId="6" startPinId="D5" endShapeId="1" endPinId="PA7" />
+  <Wire startShapeId="6" startPinId="D6" endShapeId="1" endPinId="PA6" />
+  <Wire startShapeId="6" startPinId="D7" endShapeId="1" endPinId="PA5" />
+  <Wire startShapeId="17" startPinId="In" endShapeId="1" endPinId="PE7" />
+  <Wire startShapeId="22" startPinId="In" endShapeId="1" endPinId="PE6" />
+  <Wire startShapeId="16" startPinId="In" endShapeId="1" endPinId="PA4" />
+  <Wire startShapeId="1" startPinId="PF1" endShapeId="25" endPinId="Out" />
+  <Wire startShapeId="27" startPinId="PWM" endShapeId="1" endPinId="PB6" />
+  <Wire startShapeId="10" startPinId="In" endShapeId="1" endPinId="PB0" />
+  <Wire startShapeId="11" startPinId="In" endShapeId="1" endPinId="PB1" />
+  <Wire startShapeId="28" startPinId="PWM" endShapeId="1" endPinId="PB5" />
+  <Wire startShapeId="12" startPinId="In" endShapeId="1" endPinId="PB2" />
+  <Wire startShapeId="13" startPinId="In" endShapeId="1" endPinId="PB3" />
+  <Wire startShapeId="26" startPinId="Out" endShapeId="1" endPinId="PF0" />
+ </Wires>
+</GenericHID>

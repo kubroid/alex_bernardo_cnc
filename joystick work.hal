@@ -1,0 +1,30 @@
+loadusr -W hal_input -KRAL 3D
+
+#setp halui.jog-speed 2100
+# position = (count - offset) / scale
+setp input.0.abs-throttle-scale -0.2
+setp input.0.abs-throttle-offset 255
+
+net joy-jog-speed input.0.abs-throttle-position => halui.jog-speed
+
+#invert axes
+loadrt sum2 count=3
+addf sum2.0 servo-thread
+addf sum2.1 servo-thread
+addf sum2.2 servo-thread
+
+#X is ok
+setp sum2.0.gain0 1
+#Y is reverted
+setp sum2.1.gain0 -1
+#Z is ok
+setp sum2.2.gain0 1
+
+net reverse-jog-X sum2.0.in0 <= input.0.abs-x-position
+net reverse-jog-Y sum2.1.in0 <= input.0.abs-y-position
+net reverse-jog-Z sum2.2.in0 <= input.0.abs-rz-position
+
+net joy-x-jog halui.jog.0.analog <= sum2.0.out
+net joy-y-jog halui.jog.1.analog <= sum2.1.out
+net joy-z-jog halui.jog.2.analog <= sum2.2.out
+

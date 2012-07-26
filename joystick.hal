@@ -1,0 +1,51 @@
+loadusr -W hal_input -KRAL Dragon
+
+#setp halui.jog-speed 2100
+# position = (count - offset) / scale
+
+loadrt or2 names=or2_0,or2_1,or2_2
+loadrt mux8 names=mux8_0
+
+addf or2_0 servo-thread
+addf or2_1 servo-thread
+addf or2_2 servo-thread
+addf mux8_0 servo-thread
+
+# set the jog speed for the joypad again use numbers that make sense for your machine
+setp mux8_0.in0 50
+setp mux8_0.in1 100
+setp mux8_0.in2 150
+setp mux8_0.in3 200
+setp mux8_0.in4 300
+setp mux8_0.in5 2000
+
+# the following does the magic of setting the jog speeds
+net remote-speed-slow   or2_0.in0 input.0.btn-trigger
+net remote-speed-medium or2_1.in0 input.0.btn-thumb
+net remote-speed-fast   or2_0.in1 or2_1.in1 input.0.btn-thumb2
+net remote-speed-fast2  or2_2.in1 input.0.btn-top
+
+net joy-speed-1 mux8_0.sel0 <= or2_0.out
+net joy-speed-2 mux8_0.sel1 <= or2_1.out
+net joy-speed-3 mux8_0.sel2 <= or2_2.out
+net joy-speed-final halui.jog-speed <= mux8_0.out
+
+
+loadrt sum2 names=sum2_0,sum2_1,sum2_2
+addf sum2_0 servo-thread
+addf sum2_1 servo-thread
+addf sum2_2 servo-thread
+
+# reverse the analog so the axis will go in the expected direction
+setp sum2_0.gain0 1
+net reverse-x sum2_0.in0 <= input.0.abs-x-position
+net joy-x-jog halui.jog.0.analog <= sum2_0.out
+
+setp sum2_1.gain0 -1
+net reverse-y sum2_1.in0 <= input.0.abs-y-position
+net joy-y-jog halui.jog.1.analog <= sum2_1.out
+
+setp sum2_2.gain0 -1
+net reverse-z sum2_2.in0 <= input.0.abs-rz-position
+net joy-z-jog halui.jog.2.analog <= sum2_2.out
+
