@@ -114,4 +114,5 @@ net spindle-phase-b encoder_spindle.phase-B
 net spindle-index encoder_spindle.phase-Z
 
 net spindle-phase-a <= parport.0.pin-12-in
+#net spindle-index <= parport.0.pin-12-in
 
