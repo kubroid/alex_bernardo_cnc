@@ -105,6 +105,7 @@ setp scale_encoder_to_rpm.gain 60
 
 setp encoder_spindle.position-scale 16
 setp encoder_spindle.counter-mode true
+#setp encoder_spindle.min-velocity-estimate 5
 net encoder_spindle_velocity scale_encoder_to_rpm.in <= encoder_spindle.velocity
 net spindle-position encoder_spindle.position => motion.spindle-revs
 net spindle-velocity scale_encoder_to_rpm.out => motion.spindle-speed-in
