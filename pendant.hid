@@ -6,7 +6,7 @@
   <Item logicalMinOverride="0" valueType="0" reverse="false" enabled="true" outputType="0" type="1" useResponseCurve="false" index="1" usage="55" outputMin="-1" outputMax="1" pin="jog-wheel" usagePage="1" logicalMaxOverride="1023" >
    <controlPoints>
     <point lP="0" dwLog="0" />
-    <point lP="9974" dwLog="9945" />
+    <point lP="10000" dwLog="10000" />
    </controlPoints>
   </Item>
   <Item logicalMinOverride="0" valueType="0" reverse="false" enabled="true" outputType="0" type="1" useResponseCurve="false" index="2" usage="1" outputMin="-1" outputMax="1" pin="selector" usagePage="9" logicalMaxOverride="6" >
@@ -28,34 +28,62 @@
   <Item enabled="true" type="0" index="8" usage="1" pin="run-button" usagePage="9" />
   <Item enabled="true" type="0" index="9" usage="1" pin="enable-left-button" usagePage="9" />
   <Item enabled="true" type="0" index="10" usage="1" pin="E-stop" usagePage="9" />
-  <Item logicalMinOverride="0" valueType="0" reverse="false" enabled="true" outputType="0" type="1" useResponseCurve="true" index="11" usage="56" outputMin="0" outputMax="2" pin="spindle-override" usagePage="1" logicalMaxOverride="1023" >
+  <Item logicalMinOverride="0" valueType="0" reverse="false" enabled="true" outputType="0" type="1" useResponseCurve="true" index="11" usage="55" outputMin="-1" outputMax="1" pin="spindle_override" usagePage="1" logicalMaxOverride="1023" >
    <controlPoints>
     <point lP="0" dwLog="0" />
     <point lP="1000" dwLog="0" />
-    <point lP="4750" dwLog="5000" />
-    <point lP="5250" dwLog="5000" />
+    <point lP="2500" dwLog="2500" />
+    <point lP="4000" dwLog="5000" />
+    <point lP="6000" dwLog="5000" />
+    <point lP="7500" dwLog="7500" />
     <point lP="9000" dwLog="10000" />
     <point lP="10000" dwLog="10000" />
    </controlPoints>
   </Item>
-  <Item logicalMinOverride="0" valueType="0" reverse="false" enabled="true" outputType="0" type="1" useResponseCurve="true" index="12" usage="56" outputMin="0" outputMax="2" pin="feed-override" usagePage="1" logicalMaxOverride="1023" >
+  <Item logicalMinOverride="0" valueType="0" reverse="false" enabled="true" outputType="0" type="1" useResponseCurve="true" index="12" usage="55" outputMin="-1" outputMax="1" pin="feed_override" usagePage="1" logicalMaxOverride="1023" >
    <controlPoints>
     <point lP="0" dwLog="0" />
     <point lP="1000" dwLog="0" />
-    <point lP="4750" dwLog="5000" />
-    <point lP="5250" dwLog="5000" />
+    <point lP="2500" dwLog="2500" />
+    <point lP="4000" dwLog="5000" />
+    <point lP="6000" dwLog="5000" />
+    <point lP="7500" dwLog="7500" />
     <point lP="9000" dwLog="10000" />
     <point lP="10000" dwLog="10000" />
    </controlPoints>
   </Item>
-  <Item enabled="true" type="3" index="14" usage="1000" pin="run-led" usagePage="8" />
-  <Item enabled="true" type="3" index="15" usage="1000" pin="pause-led" usagePage="8" />
-  <Item enabled="true" type="3" index="16" usage="1000" pin="stop-led" usagePage="8" />
-  <Item enabled="true" type="3" index="17" usage="1000" pin="enable-led" usagePage="8" />
-  <Item enabled="true" type="3" index="18" usage="1000" pin="LCD-backlight-led" usagePage="8" />
-  <Item enabled="true" type="3" index="19" usage="1000" pin="internal-led" usagePage="8" />
-  <Item enabled="false" type="5" index="20" usage="1" pin="1" usagePage="62500" />
-  <Item enabled="false" type="5" index="21" usage="1" pin="1" usagePage="62500" />
-  <Item enabled="false" type="4" index="1" usage="0" refreshPeriod="100" LCDProcPort="0" pin="LCD" usagePage="0" />
+  <Item logicalMinOverride="0" valueType="0" reverse="false" enabled="true" outputType="0" type="1" useResponseCurve="true" index="13" usage="4" outputMin="-1" outputMax="1" pin="y-joystick" usagePage="1" logicalMaxOverride="1023" >
+   <controlPoints>
+    <point lP="0" dwLog="0" />
+    <point lP="1000" dwLog="0" />
+    <point lP="2500" dwLog="2500" />
+    <point lP="4000" dwLog="5000" />
+    <point lP="6000" dwLog="5000" />
+    <point lP="7500" dwLog="7500" />
+    <point lP="9000" dwLog="10000" />
+    <point lP="10000" dwLog="10000" />
+   </controlPoints>
+  </Item>
+  <Item logicalMinOverride="0" valueType="0" reverse="false" enabled="true" outputType="0" type="1" useResponseCurve="true" index="14" usage="4" outputMin="-1" outputMax="1" pin="x-joystick" usagePage="1" logicalMaxOverride="1023" >
+   <controlPoints>
+    <point lP="0" dwLog="0" />
+    <point lP="1000" dwLog="0" />
+    <point lP="2500" dwLog="2500" />
+    <point lP="4000" dwLog="5000" />
+    <point lP="6000" dwLog="5000" />
+    <point lP="7500" dwLog="7500" />
+    <point lP="9000" dwLog="10000" />
+    <point lP="10000" dwLog="10000" />
+   </controlPoints>
+  </Item>
+  <Item enabled="true" type="3" index="16" usage="1000" pin="run-led" usagePage="8" />
+  <Item enabled="true" type="3" index="17" usage="1000" pin="pause-led" usagePage="8" />
+  <Item enabled="true" type="3" index="18" usage="1000" pin="stop-led" usagePage="8" />
+  <Item enabled="true" type="3" index="19" usage="1000" pin="enable-led" usagePage="8" />
+  <Item enabled="true" type="3" index="20" usage="1000" pin="LCD-backlight-led" usagePage="8" />
+  <Item enabled="true" type="3" index="21" usage="1000" pin="internal-led" usagePage="8" />
+  <Item enabled="false" type="5" index="22" usage="1" pin="1" usagePage="62500" />
+  <Item enabled="false" type="5" index="23" usage="1" pin="1" usagePage="62500" />
+  <Item enabled="true" type="4" index="1" usage="0" refreshPeriod="100" LCDProcPort="0" pin="LCD" usagePage="0" />
  </Items>
 </HID>
