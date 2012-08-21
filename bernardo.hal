@@ -74,7 +74,13 @@ net all-limit => axis.2.pos-lim-sw-in
 
 #net both-home-x <= parport.0.pin-10-in
 #net both-home-y <= parport.0.pin-11-in
-net probe-in <= parport.0.pin-15-in-not
+
+#probe
+loadrt debounce cfg=1
+addf debounce.0 base-thread
+setp debounce.0.delay  10
+net probe-raw parport.0.pin-13-in-not => debounce.0.0.in
+net probe-in <= debounce.0.0.out
 
 
 setp stepgen.0.position-scale [AXIS_0]SCALE

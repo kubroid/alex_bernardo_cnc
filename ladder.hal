@@ -1,0 +1,2 @@
+loadrt classicladder_rt
+addf classicladder.0.refresh servo-thread

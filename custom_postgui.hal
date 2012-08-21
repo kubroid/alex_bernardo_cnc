@@ -7,3 +7,4 @@
 
 net spindle-velocity => abs.0.in
 net absolute-spindle-vel <= abs.0.out => pyvcp.spindle-speed
+net probe-in => pyvcp.led-probe
