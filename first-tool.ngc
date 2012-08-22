@@ -2,8 +2,9 @@ o<first-tool> sub
 (G90 G53 G0 Z0)
 (G53 G0 X0 Y0)
 g49(clear tool offset)
+g40
 g90
-(g53 g0 z0)
+g53 g0 z0
 g53 g0 x135 y71
 g91
 G38.2 Z-200 F500
