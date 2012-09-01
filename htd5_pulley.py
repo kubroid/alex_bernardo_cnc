@@ -31,11 +31,11 @@ while z > deep:
 	z -= zPerTurn
 	if z < deep :
 		z = deep;
-	print "G2 X%.3f Y%.3f Z%.2f I0 J%.3f P1" % (0, (OD + tD)/2, z, (OD + tD)/2)
+	print "G2 X%.3f Y%.3f Z%.2f I0 J%.3f P1" % (0, (OD + tD)/2, z, -(OD + tD)/2)
 
 #final cut
 tD = toolD
 print "G1 X%.3f Y%.3f" % (0, (OD + tD)/2)
-print "G2 X%.3f Y%.3f Z%.2f I0 J%.3f P1" % (0, (OD + tD)/2, z, (OD + tD)/2)
+print "G2 X%.3f Y%.3f Z%.2f I0 J%.3f P1" % (0, (OD + tD)/2, z, -(OD + tD)/2)
 print "G0 z20"
 print "M2"
