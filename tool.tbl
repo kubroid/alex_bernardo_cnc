@@ -1,5 +1,11 @@
-T1 P1 D0.125000 Z+0.511000 ;1/8 end mill
-T2 P2 D0.062500 Z+0.100000 ;1/16 end mill
-T3 P3 D0.201000 Z+1.273000 ;#7 tap drill
-T4 P4 D16 Z+1.273000 ;16mm rough
+T1 P1 D6.000 Z+0 ;6mm end mill
+T2 P2 D6 Z+0 ;6mm drill
+T3 P3 D12.000 Z+0 ;#12mm endmill
+T4 P4 D5 Z+0 ;5mm drill
+T5 P5 D8 Z+0 ;8mm drill
+T6 P6 D10 Z+0 ;10mm chamfer
+T7 P4 D16 Z+1.273000 ;16mm rough
+T8 P4 D16 Z+1.273000 ;16mm rough
+T9 P4 D16 Z+1.273000 ;16mm rough
+T10 P4 D16 Z+1.273000 ;16mm rough
 T99999 P99999 Z+0.100000 ;big tool number

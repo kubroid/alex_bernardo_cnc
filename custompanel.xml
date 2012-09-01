@@ -27,41 +27,13 @@
 	</led>
      </hbox>
   <vbox>
-    <label><text>"X axis"</text></label>
+    <label><text>"Z touch off"</text></label>
     <hbox>
       <number>
         <halpin>"z-touch-off"</halpin>
         <format>"+004.4f"</format>
         <font>('courier 10 pitch',20)</font>
       </number>
-      <button>
-        <text>"Zero"</text>
-        <halpin>"Xzerobutton"</halpin>
-      </button>
-    </hbox>
-    <label><text>"Y axis"</text></label>
-    <hbox>
-      <number>
-        <halpin>"Ydisplay"</halpin>
-        <format>"+004.4f"</format>
-        <font>('courier 10 pitch',20)</font>
-      </number>
-      <button>
-        <text>"Zero"</text>
-        <halpin>"Yzerobutton"</halpin>
-      </button>
-    </hbox>
-    <label><text>"Z axis"</text></label>
-    <hbox>
-      <number>
-        <halpin>"Zdisplay"</halpin>
-        <format>"+004.4f"</format>
-        <font>('courier 10 pitch',20)</font>
-      </number>
-      <button>
-        <text>"Zero"</text>
-        <halpin>"Zzerobutton"</halpin>
-      </button>
     </hbox>
   </vbox>
 </pyvcp>
